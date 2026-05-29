@@ -3,13 +3,13 @@ pipeline {
     environment {
         AWS_ACCESS_KEY_ID     = credentials('aws-access-key-id')
         AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
-        S3_BUCKET  = 'chirag-static'
-        AWS_REGION = 'us-east-1'
+        S3_BUCKET  = 's3-bucket-october-batch'
+        AWS_REGION = 'eu-north-1'
     }
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Chigich/static-websites-s3.git'
+                git branch: 'main', url: 'https://github.com/HarshithNA/static-websites-s3'
             }
         }
         stage('Deploy') {
